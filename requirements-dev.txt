@@ -1,0 +1,5 @@
+coverage
+coverage-enable-subprocess
+pre-commit
+pytest
+werkzeug>=0.9

@@ -1,0 +1,2 @@
+usr/bin/sassc
+usr/lib/*/dist-packages/__pycache__/*.pyc
