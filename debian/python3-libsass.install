@@ -1,0 +1,4 @@
+usr/lib/python3*/*-packages/*.py
+usr/lib/python3*/*-packages/_sass*.so
+usr/lib/python3*/*-packages/*.egg-info/ 
+usr/lib/python3*/*-packages/sassutils/ 

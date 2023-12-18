@@ -1,15 +1,44 @@
-Source: template-repository
-Section: unknown
+Source: libsass-python
+Maintainer: Frédéric Bonnard <frediz@debian.org>
+Section: python
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends: debhelper-compat (= 13),
+ dh-python,
+ python3-all-dev,
+ python3-setuptools,
+ python3-six,
+ python3-sphinx,
+ python3-werkzeug,
+ python3-flake8,
+ python3-pytest,
+ python3-doc,
+ python-flask-doc,
+ python-setuptools-doc,
+ libsass-dev (>= 3.6.5)
+Rules-Requires-Root: no
+Standards-Version: 4.6.1
+Homepage: https://sass.github.io/libsass-python
+Vcs-Git: https://salsa.debian.org/debian/libsass-python.git
+Vcs-Browser: https://salsa.debian.org/debian/libsass-python
 
-Package: template-repository
+Package: python3-libsass
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends: ${misc:Depends}, ${python3:Depends}, ${shlibs:Depends}
+Description: SASS for Python 3: a straightforward binding of libsass for Python
+ This package provides a simple Python 3 extension module sass which is binding
+ Libsass (written in C/C++ by Hampton Catlin and Aaron Leung). It's very
+ straightforward and there isn't any headache related Python
+ distribution/deployment.
+ That means you can add just libsass into your setup.py's install_requires list
+ or requirements.txt file. Need no Ruby nor Node.js.
+
+Package: pysassc
+Section: web
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}, ${shlibs:Depends}, python3-libsass
+Description: SASS for Python: command line utility for libsass
+ This package provides a simple Python script to access libsass
+ functionnalities.
+ Libsass (written in C/C++ by Hampton Catlin and Aaron Leung). It's very
+ straightforward and there isn't any headache related Python
+ distribution/deployment.
